@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1>Interactive Resume Builder</h1>
+
+    <!-- Resume Input Form -->
+    <form id="resumeForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" placeholder="Enter your phone number">
+
+        <label for="summary">Profile Summary:</label>
+        <textarea id="summary" placeholder="Write a short summary"></textarea>
+<!-- Education Section (Place before the Generate Resume button) -->
+<div id="educationSection">
+    <h3>Education:</h3>
+    <button type="button" onclick="addEducation()">+ Add Education</button>
+    <div id="educationInputs"></div>
+</div>
+<!-- Experience Section -->
+<div id="experienceSection">
+    <h3>Work Experience:</h3>
+    <button type="button" onclick="addExperience()">+ Add Experience</button>
+    <div id="experienceInputs"></div>
+</div>
+<!-- Skills Section -->
+<div id="skillsSection">
+    <h3>Skills:</h3>
+    <ul id="previewSkills"></ul>
+    <div id="skillOptions">
+        <label><input type="checkbox" value="HTML"> HTML</label>
+        <label><input type="checkbox" value="CSS"> CSS</label>
+        <label><input type="checkbox" value="JavaScript"> JavaScript</label>
+        <label><input type="checkbox" value="React"> React</label>
+        <label><input type="checkbox" value="Node.js"> Node.js</label>
+        <label><input type="checkbox" value="Python"> Python</label>
+    </div>
+</div>
+
+        <button type="button" id="generateResume">Generate Resume</button>
+    </form>
+<!-- Progress Bar -->
+<div id="progressContainer">
+    <label>Form Completion:</label>
+    <div id="progressBar"></div>
+</div>
+    <!-- Resume Preview -->
+<div id="resumePreview">
+    <h2>Resume Preview</h2>
+    <p><strong>Name:</strong> <span id="previewName"></span></p>
+    <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+    <p><strong>Phone:</strong> <span id="previewPhone"></span></p>
+    <p><strong>Summary:</strong> <span id="previewSummary"></span></p>
+    
+    <h3>Education:</h3>
+    <ul id="previewEducation"></ul>
+
+    <h3>Skills:</h3>
+    <u1 id="previewSkills"></u1>
+
+    <h3>Work Experience:</h3>
+    <ul id="previewExperience"></ul>
+</div>
+    <button type="button" id="downloadResume">Download Resume as PDF</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
